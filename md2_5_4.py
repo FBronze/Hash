@@ -14,6 +14,7 @@ hash_desejado = sys.argv[2]
 with open(arquivo, "r") as file:
     for line in file:
         crip = line.strip()
+        # Mude conforme a necessidade
         md2_hash = MD2.new(crip.encode()).hexdigest()
         md5_hash = hashlib.md5(crip.encode()).hexdigest()
         md4_hash = hashlib.new("md4", crip.encode()).hexdigest()
