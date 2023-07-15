@@ -1,0 +1,20 @@
+#!/usr/bin/python
+import subprocess
+import os
+import sys
+
+salt = "0THoc4SA"
+hash01 = "$6$0THoc4SA$xfKAa04XZ.PIplldpEOE4qiOsIJQnoKmV/ox0eUFcetcv0EdF8pwW1J0Rfrr7dV0CrnYFEbc05OYFFkUM6L7v1"
+
+arquivo = sys.argv[1]
+
+with open(arquivo, "r", encoding="iso-8859-1") as file:
+    for senha in file:
+        comando = ["openssl", "passwd", "-6", "-salt", salt, senha.strip()]  # Remova os caracteres de nova linha
+        resultado = subprocess.run(comando, capture_output=True, text=True)
+        saida = resultado.stdout.strip()  # Remova os caracteres de nova linha
+     
+        if saida == hash01:
+            print(senha.strip())
+
+print("===== Finalizado =====")
