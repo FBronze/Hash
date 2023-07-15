@@ -3,8 +3,8 @@ import subprocess
 import os
 import sys
 
-salt = "0THoc4SA"
-hash01 = "$6$0THoc4SA$xfKAa04XZ.PIplldpEOE4qiOsIJQnoKmV/ox0eUFcetcv0EdF8pwW1J0Rfrr7dV0CrnYFEbc05OYFFkUM6L7v1"
+salt = sys.argv[3]
+hash01 = sys.argv[2]
 
 arquivo = sys.argv[1]
 
