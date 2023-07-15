@@ -2,6 +2,8 @@
 import subprocess
 import os
 import sys
+#USO:
+# python salt.py file hash salt
 
 salt = sys.argv[3]
 hash01 = sys.argv[2]
